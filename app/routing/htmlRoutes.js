@@ -1,4 +1,4 @@
-var path = requie("path");
+var path = require("path");
 
 module.exports = function (app) {
   app.get("/survey", (req, res) =>
