@@ -68,7 +68,7 @@
       <hr />
       <div class="questions"></div>
       <button
-        class="btn"
+        class="btn submitbtn"
         style="
           width: 100%;
           color: white;
@@ -83,6 +83,8 @@
       <br />
       <br />
       <a href="/api/friends">API Friends List</a>
+      <br />
+      <br />
     </div>
     <script>
       $(document).ready(function () {
@@ -129,6 +131,18 @@
           $(this).css("font-size", "1.2rem");
           scores[Question - 1] = Number($(this).attr("data-option"));
           console.log(scores);
+        });
+        $(".submitbtn").on("click", function () {
+          var name = $("#name").val().trim();
+          var photo = $("#link").val().trim();
+          var NumOfAnswered = scores.length;
+          if (name === "" || photo === "" || NumOfAnswered !== 10) {
+            alert(
+              "Please fill the required fields and answer all the survey questions!!"
+            );
+          } else {
+            alert("good to go");
+          }
         });
       });
     </script>
