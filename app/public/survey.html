@@ -1,1 +1,116 @@
-<h1>survey.html</h1>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://code.jquery.com/jquery-3.5.0.min.js"
+      integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <style>
+      .options {
+        background-color: #4267b2 !important;
+        color: white !important;
+        display: block !important;
+        width: 212px !important;
+        border-color: white !important;
+        margin: 2px !important;
+        border-radius: 20px !important;
+      }
+    </style>
+    <title>Friend Finder</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Survey Questions</h1>
+      <hr />
+      <h2>About You</h2>
+      <div class="form-group">
+        <input
+          class="form-control"
+          type="text"
+          id="name"
+          autofocus="on"
+          placeholder="Name(Required)"
+        />
+      </div>
+      <div class="form-group">
+        <input
+          class="form-control"
+          type="text"
+          id="link"
+          autofocus="on"
+          placeholder="Link to Your Photo(Required)"
+        />
+      </div>
+
+      <hr />
+      <div class="questions"></div>
+    </div>
+    <script>
+      $(document).ready(function () {
+        var SurveyQuestions = [
+          "Your mind is always buzzing with unexplored ideas and plans.",
+          "Generally speaking, you rely more on your experience than your imagination.",
+          "You find it easy to stay relaxed and focused even when there is some pressure.",
+          "You rarely do something just out of sheer curiosity.",
+          "People can rarely upset you.",
+          "It is often difficult for you to relate to other people’s feelings.",
+          "In a discussion, truth should be more important than people’s sensitivities.",
+          "You rarely get carried away by fantasies and ideas.",
+          "You think that everyone’s views should be respected regardless of whether they are supported by facts or not.",
+          "You feel more energetic after spending time with a group of people.",
+        ];
+        for (var i = 0; i < SurveyQuestions.length; i++) {
+          $(".questions").append(
+            "<h3>Question" +
+              Number(i + 1) +
+              "</h3><h4>" +
+              SurveyQuestions[i] +
+              "</h4><button class='btn btn-secondary options'data-question=" +
+              Number(i + 1) +
+              " data-option='1'>1(Strongly Disagree)</button><button class='btn btn-secondary options'data-question=" +
+              Number(i + 1) +
+              " data-option='2'>2</button><button class='btn btn-secondary options'data-question=" +
+              Number(i + 1) +
+              " data-option='3'>3</button><button class='btn btn-secondary options'data-question=" +
+              Number(i + 1) +
+              " data-option='4'>4</button><button class='btn btn-secondary options'data-question=" +
+              Number(i + 1) +
+              " data-option='5'>5(Strongly Agree)</button><br>"
+          );
+        }
+        $(".options").on("click", function () {
+          var Question = $(this).attr("data-question");
+          $("[data-question=" + Question + "]").css("font-weight", "normal");
+          $("[data-question=" + Question + "]").css("font-size", "1rem");
+          console.log($(this).attr("data-question"));
+          console.log($(this).attr("data-option"));
+          $(this).css("font-weight", "bold");
+          $(this).css("font-size", "1.2rem");
+        });
+      });
+    </script>
+  </body>
+</html>
