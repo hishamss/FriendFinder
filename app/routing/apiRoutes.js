@@ -5,9 +5,13 @@ module.exports = function (app) {
     res.json(friends);
   });
   app.post("/api/friends", function (req, res) {
-    // var BestMatch = friends[totalDifference(req.body).index];
+    var FriendName = req.body.name;
+    var FriendPhoto = req.body.photo;
+    var ScoreLength = req.body.scores.length;
+    console.log(ScoreLength);
+    var BestMatch = friends[totalDifference(req.body)];
     friends.push(req.body);
-    res.json(totalDifference(req.body));
+    res.json(BestMatch);
   });
 };
 
@@ -17,10 +21,7 @@ function totalDifference(NewFriend) {
   for (friend of friends) {
     Defferences.push(subtarray(friend.scores, NewScore));
   }
-  return {
-    index: Defferences.indexOf(Math.min(...Defferences)),
-    deff: Defferences,
-  };
+  return Defferences.indexOf(Math.min(...Defferences));
 }
 
 function subtarray(arr1, arr2) {
