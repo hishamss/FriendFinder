@@ -29,6 +29,16 @@
       crossorigin="anonymous"
     />
     <style>
+      [data-dismiss="modal"] {
+        background-color: #4267b2;
+      }
+      span {
+        color: #4267b2;
+      }
+      #BestMatchImage {
+        width: 200px !important;
+        height: 200px !important;
+      }
       .options {
         background-color: #4267b2 !important;
         color: white !important;
@@ -82,7 +92,7 @@
       </button>
       <br />
       <br />
-      <a href="/api/friends">API Friends List</a>
+      <p><a href="/api/friends">API Friends List</a> | <a href="/">Home</a></p>
       <br />
       <br />
       <div class="modal">
@@ -105,6 +115,8 @@
                 class="img-fluid img-thumbnail"
                 id="BestMatchImage"
                 alt="Best Match Image"
+                width="200"
+                height="200"
               />
             </div>
             <div class="modal-footer">
