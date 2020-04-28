@@ -130,7 +130,6 @@
           $(this).css("font-weight", "bold");
           $(this).css("font-size", "1.2rem");
           scores[Question - 1] = Number($(this).attr("data-option"));
-          console.log(scores);
         });
         $(".submitbtn").on("click", function () {
           var name = $("#name").val().trim();
@@ -141,7 +140,21 @@
               "Please fill the required fields and answer all the survey questions!!"
             );
           } else {
-            alert("good to go");
+            var UserInfo = {
+              name: name,
+              photo: photo,
+              scores: scores,
+            };
+            console.log(UserInfo.scores);
+            $.post("/api/friends", UserInfo, function (data) {
+              // If a table is available... tell user they are booked.
+              if (data) {
+                console.log("Submit Successfully");
+                console.log(data);
+              } else {
+                alert("smth went wrong");
+              }
+            });
           }
         });
       });

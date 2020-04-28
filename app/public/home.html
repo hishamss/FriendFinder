@@ -53,24 +53,5 @@
       </div>
       <a href="/api/friends" style="color: white;">API Friends List</a>
     </div>
-
-    <a href="/api/friends"> <button>click me</button></a>
-
-    <script>
-      var test = {
-        name: "Ahmad",
-        photo:
-          "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
-        scores: [5, 1, 4, 4, 5, 1, 2, 5, 4, 1],
-      };
-      $("button").on("click", function () {
-        $.post("/api/friends", test, function (data) {
-          // If a table is available... tell user they are booked.
-          if (data) {
-            alert("Yay! You are officially booked!");
-          }
-        });
-      });
-    </script>
   </body>
 </html>
