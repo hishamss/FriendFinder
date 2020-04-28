@@ -169,7 +169,8 @@
         $(".submitbtn").on("click", function () {
           var name = $("#name").val().trim();
           var photo = $("#link").val().trim();
-          var NumOfAnswered = scores.length;
+          var NumOfAnswered = Object.values(scores).length;
+          console.log("length", NumOfAnswered);
           if (name === "" || photo === "" || NumOfAnswered !== 10) {
             alert(
               "Please fill the required fields and answer all the survey questions!!"
@@ -190,7 +191,7 @@
                 console.log("Submit Successfully");
                 console.log(data);
               } else {
-                alert("smth went wrong");
+                alert("Already Exists!!");
               }
             });
           }

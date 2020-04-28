@@ -6,12 +6,15 @@ module.exports = function (app) {
   });
   app.post("/api/friends", function (req, res) {
     var FriendName = req.body.name;
-    var FriendPhoto = req.body.photo;
-    var ScoreLength = req.body.scores.length;
-    console.log(ScoreLength);
-    var BestMatch = friends[totalDifference(req.body)];
-    friends.push(req.body);
-    res.json(BestMatch);
+    var found = friends.find((element) => element.name === FriendName);
+    // check if the friend already exists in order not to compare friend with the same person
+    if (!found) {
+      var BestMatch = friends[totalDifference(req.body)];
+      friends.push(req.body);
+      res.json(BestMatch);
+    } else {
+      res.send(false);
+    }
   });
 };
 
