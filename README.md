@@ -1,8 +1,8 @@
 # FriendFinder
 
-<h1><a>https://friend-finder-hss.herokuapp.com/</a></h1>
+<h1><a href="https://friend-finder-hss.herokuapp.com/">Click to go the website</a></h1>
 
-Node Express website to find the best friend based on your answers for the survey.
+Node Express website to find the best match friend based on your answers for the survey.
 
 <h2>Use</h2>
 <hr>
@@ -16,7 +16,7 @@ Node Express website to find the best friend based on your answers for the surve
    - link to the user image (required)
    - ansewr 10 survey questions (required)
 
-- Hint: THe page will not submit unless you type all the required info.
+- Hint: The page will not submit unless you type all the required info.
 
 ![step2](GIF/step2.gif)
 
@@ -85,7 +85,7 @@ Node Express website to find the best friend based on your answers for the surve
 <h2>Learning Points</h2>
 <hr>
 
-- Using Express to implemnte webserver.
+- Using Express to implement webserver.
 - Using MVC pattern in Node.js and Express to allow for efficient code resuse and organaization .
 - Using Heroku to deploy your application online.
 
