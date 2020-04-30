@@ -7,7 +7,7 @@ Node Express website to find the best match friend based on your answers for the
 <h2>Use</h2>
 <hr>
 
-1. Click on start survey to go to the survey page.
+1. Click on start survey to go to the survey page.gfgdg
 
    ![step1](GIF/step1.gif)
 
