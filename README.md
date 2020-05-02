@@ -1,6 +1,6 @@
 # FriendFinder
 
-<h1><a href="https://friend-finder-hss.herokuapp.com/">Click to go the website</a></h1>
+<h1><a href="https://friend-finder-hss.herokuapp.com/">Website Link</a></h1>
 
 Node Express website to find the best match friend based on your answers for the survey.
 
